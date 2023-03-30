@@ -3,12 +3,18 @@
 :root {
   --calliper-font-family: 'Inter', 'Helvetica Neue', sans-serif;
 
+  --calliper-font-size-xs: 0.75rem;
   --calliper-font-size-s: 1rem;
   --calliper-font-size-m: 1.25rem;
   --calliper-font-size-l: 1.5rem;
 
+  --calliper-line-height-xs: 1rem;
   --calliper-line-height-s: 1.5rem;
   --calliper-line-height-l: 2rem;
+
+  --calliper-font-weight-light: 400;
+  --calliper-font-weight-normal: 500;
+  --calliper-font-weight-bold: 700;
 }
 
 body, p, li, a {

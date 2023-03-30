@@ -45,7 +45,9 @@ export function transformElementToThread(element: InteractionItem, data: ChartDa
   const featureKey = Object.keys(dataset)[element.datasetIndex + 1]
   assertIsChartDataFeature(featureKey)
 
+
   return {
+    id: threads.find(thread => thread.chartDataPoint.country === dataset.country && thread.chartDataPoint.feature === featureKey)?.id ?? undefined,
     chartDataPoint: {
       country: dataset.country,
       feature: featureKey

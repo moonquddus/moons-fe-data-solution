@@ -17,12 +17,12 @@ function InsightsOverview() {
 
   const baseClass = 'f-insights-overview'
   return (
-    <div className={baseClass}>
+    <article className={baseClass}>
       {!!chartData && !!threads &&  (
         <InsightsChart data={chartData} threads={threads} onPointClick={setActiveThread} />
       )}
       <CommentsBox activeThread={activeThread} />
-    </div>
+    </article>
   )
 }
 
