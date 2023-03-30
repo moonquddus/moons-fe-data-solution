@@ -1,0 +1,11 @@
+.f-comment-input__input {
+  margin-top: auto;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  border-top: solid 1px var(--calliper-color-grey);
+  background: none;
+  font-size: var(--calliper-font-size-xs);
+  line-height: var(--calliper-font-size-xs);
+  padding: 8px 4px;
+}

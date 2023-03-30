@@ -17,7 +17,8 @@
   --calliper-font-weight-bold: 700;
 }
 
-body, p, li, a {
+body, p, li, a, input, button {
+  font-family: var(--calliper-font-family);
   font-size: var(--calliper-font-size-s);
   line-height: var(--calliper-line-height-s);
 }

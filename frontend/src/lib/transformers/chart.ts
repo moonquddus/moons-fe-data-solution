@@ -1,4 +1,5 @@
 import { ChartData as ChartJSData, ChartDataset, InteractionItem } from "chart.js"
+import { matchThread } from "../helpers/comments"
 import { assertIsChartDataFeature, ChartData, validChartDataFeatures } from "../model/chart"
 import { ActiveThreadPayload, CommentThread } from "../model/comment"
 
@@ -8,16 +9,18 @@ interface ChartJSTransformReducer {
 }
 
 export function transformDataToChartJSData(data: ChartData[], threads: CommentThread[]): ChartJSData<'bar'> {
+  // apologies, I hate overly complicated reducers but I went past the point of no return...
   const transformedData: ChartJSTransformReducer = data.reduce(
     (accumulator, singleData) => {
     accumulator.labels.push(singleData.country)
     validChartDataFeatures.forEach((featureName, index) => {
-      const thread = threads.find(thread => thread.chartDataPoint.country === singleData.country && thread.chartDataPoint.feature === featureName)
-      accumulator.datasets[index].data.push([singleData[featureName], thread?.commentsCount ?? 0])
+      const thread = matchThread(threads, singleData.country, featureName)
+      accumulator.datasets[index].data.push([singleData[featureName], (thread?.commentsCount ?? 0) / 10000])
     })
     return accumulator
 
   }, {
+    // this part sets the data structure
     labels: [],
     datasets: validChartDataFeatures.map((featureName, index) => {
       return {
@@ -26,10 +29,9 @@ export function transformDataToChartJSData(data: ChartData[], threads: CommentTh
         data: [],
         datalabels: {
           anchor: 'end',
-          offset: 20,
           color: 'black',
           formatter: (value) => {
-            return value[1] > 0 ? `${value[1]}💬` : ''
+            return value[1] > 0 ? `${value[1] * 10000}🗨️` : ''
           },
         },
       }
@@ -47,7 +49,7 @@ export function transformElementToThread(element: InteractionItem, data: ChartDa
 
 
   return {
-    id: threads.find(thread => thread.chartDataPoint.country === dataset.country && thread.chartDataPoint.feature === featureKey)?.id ?? undefined,
+    id: matchThread(threads, dataset.country, featureKey)?.id ?? undefined,
     chartDataPoint: {
       country: dataset.country,
       feature: featureKey

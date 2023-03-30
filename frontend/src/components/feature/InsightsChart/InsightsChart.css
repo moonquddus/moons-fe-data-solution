@@ -2,3 +2,10 @@
   max-width: 1000px;
   max-height: 600px;
 }
+
+@media screen and (max-width: 1550px) {
+  .f-insights-chart {
+    max-width: 750px;
+    max-height: 450px;
+  }
+}

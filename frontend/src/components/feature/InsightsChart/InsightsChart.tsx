@@ -1,4 +1,4 @@
-import { BarElement, CategoryScale, Chart, Legend, LinearScale, Tooltip } from 'chart.js'
+import { BarElement, CategoryScale, Chart, ChartOptions, Legend, LinearScale, Tooltip, TooltipItem, TooltipModel } from 'chart.js'
 import { MouseEvent, useMemo, useRef } from 'react'
 import { Bar, getElementAtEvent } from 'react-chartjs-2'
 import { ChartData } from '../../../lib/model/chart'
@@ -37,13 +37,23 @@ function InsightsChart(props: InsightsChartProps) {
     ChartDataLabels
   )
 
-  const options = {
+  const options: ChartOptions<'bar'> = {
     responsive: true,
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function(this: TooltipModel<"bar">, tooltipItem: TooltipItem<"bar">) {
+            const value = Array.isArray(tooltipItem.raw) ? tooltipItem.raw[0] : 0
+            return `${tooltipItem.dataset.label}: ${value}`
+          }
+        }
+      }
+    }
   }
 
   const baseClass = 'f-insights-chart'
   return (
-    <Bar ref={chartRef} className={baseClass} options={options} data={transformedData} onClick={clickHandler} />
+    <Bar ref={chartRef} className={baseClass} options={options} data={transformedData} onClick={clickHandler} updateMode='resize' />
   )
 }
 

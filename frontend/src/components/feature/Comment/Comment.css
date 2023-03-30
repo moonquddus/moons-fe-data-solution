@@ -1,0 +1,21 @@
+.f-comment {
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: solid 1px var(--calliper-color-grey);
+}
+
+.f-comment:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.f-comment__author {
+  font-weight: var(--calliper-font-weight-bold);
+  font-size: var(--calliper-font-size-xs);
+}
+
+.f-comment__text {
+  margin: 0;
+  font-size: var(--calliper-font-size-xs);
+  line-height: var(--calliper-font-size-xs);
+}

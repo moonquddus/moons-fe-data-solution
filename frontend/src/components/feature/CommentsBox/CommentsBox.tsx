@@ -1,19 +1,22 @@
-import { useEffect, useMemo, useState } from 'react'
+import { FormEventHandler, useEffect, useState } from 'react'
 import { ActiveThreadPayload } from '../../../lib/model/comment'
-import { useLazyGetSingleThreadQuery } from '../../../lib/service/coment.api'
+import Comment from '../Comment/Comment'
+import { useLazyGetSingleThreadQuery, useRespondToThreadMutation } from '../../../lib/service/coment.api'
 import './CommentsBox.css'
+import CommentInput from '../CommentInput/CommentInput'
 
 interface CommentsBoxProps {
   activeThread?: ActiveThreadPayload | null
 }
 
 function CommentsBox({activeThread}: CommentsBoxProps) {
-  const [trigger, commentThread] = useLazyGetSingleThreadQuery()
+  const [getComments, commentThread] = useLazyGetSingleThreadQuery()
   useEffect(() => {
     if (!!activeThread?.id) {
-      trigger(activeThread?.id)
+      getComments(activeThread?.id)
     }
   }, [activeThread?.id])
+
   const hasComments = !!activeThread?.id && !!commentThread.data
 
   const baseClass = 'f-comments-box'
@@ -27,13 +30,12 @@ function CommentsBox({activeThread}: CommentsBoxProps) {
       )}
       <ul className={`${baseClass}__thread`}>
         {hasComments && commentThread.data?.comments.map((comment, key) => (
-          <li className={`${baseClass}__comment`} key={`comment-${key}`}>
-            <div className={`${baseClass}__author`}>{comment.userName}</div>
-            <p className={`${baseClass}__text`}>{comment.text}</p>
-          </li>
+          <Comment key={`comment-${key}`} comment={comment} />
         ))}
-
       </ul>
+      {activeThread && (
+        <CommentInput activeThread={activeThread} />
+      )}
     </section>
   )
 }

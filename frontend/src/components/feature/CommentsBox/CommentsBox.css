@@ -1,32 +1,18 @@
 .f-comments-box {
+  display: flex;
+  flex-direction: column;
   border-radius: 8px;
   padding: 16px;
   border: solid 1px var(--calliper-color-grey);
   box-shadow: 0px 2px 5px 0px var(--calliper-color-grey);
   width: 300px;
-  min-height: 100px;
-  height: auto;
+  height: 430px;
 }
 
 .f-comments-box__thread {
-  margin: 0;
+  margin: 16px 0;
   padding: 0;
   list-style: none;
-}
-
-.f-comments-box__comment {
-  padding-bottom: 8px;
-  margin-bottom: 8px;
-  border-bottom: solid 1px var(--calliper-color-grey);
-}
-
-.f-comments-box__author {
-  font-weight: var(--calliper-font-weight-bold);
-  font-size: var(--calliper-font-size-xs);
-}
-
-.f-comments-box__text {
-  margin: 0;
-  font-size: var(--calliper-font-size-xs);
-  line-height: var(--calliper-font-size-xs);
+  height: 300px;
+  overflow-y: auto;
 }
