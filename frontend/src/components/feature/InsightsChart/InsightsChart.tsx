@@ -9,12 +9,12 @@ import { ActiveThreadPayload, CommentThread } from '../../../lib/model/comment'
 
 interface InsightsChartProps {
   data: ChartData[]
-  threads: CommentThread[]
-  onPointClick: (payload: ActiveThreadPayload) => void
+  threads?: CommentThread[]
+  onPointClick?: (payload: ActiveThreadPayload) => void
 }
 
 function InsightsChart(props: InsightsChartProps) {
-  const {data, threads, onPointClick} = props
+  const {data, threads = [], onPointClick = () => {}} = props
   const chartRef = useRef(null)
 
   const clickHandler = (event: MouseEvent<HTMLCanvasElement>) => {

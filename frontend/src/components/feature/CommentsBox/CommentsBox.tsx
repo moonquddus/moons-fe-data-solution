@@ -28,6 +28,12 @@ function CommentsBox({activeThread}: CommentsBoxProps) {
       {activeThread && (
         <h2>Comments ({activeThread.chartDataPoint.country} - {activeThread.chartDataPoint.feature})</h2>
       )}
+      {commentThread.isLoading && (
+        <p>Loading comments...</p>
+      )}
+      {commentThread.isError && (
+        <p>Error loading comments!</p>
+      )}
       <ul className={`${baseClass}__thread`}>
         {hasComments && commentThread.data?.comments.map((comment, key) => (
           <Comment key={`comment-${key}`} comment={comment} />

@@ -15,6 +15,6 @@ export const router = createBrowserRouter([
   },
   {
     path: '/view-chart/:id',
-    element: <NavRoute><ViewChart /></NavRoute>,
+    element:<ViewChart />,
   }
 ])

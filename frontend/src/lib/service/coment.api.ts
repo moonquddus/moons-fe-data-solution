@@ -1,8 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { ChartDataPoint } from '../model/chart'
-import { Comment, CommentThreadsDataResponse, FullCommentThread } from '../model/comment'
-
-const BASE_URL = 'http://localhost:8000'
+import { CommentThreadsDataResponse, FullCommentThread } from '../model/comment'
+import { BASE_URL } from './config'
 
 interface ApiComment {
   user_name: string

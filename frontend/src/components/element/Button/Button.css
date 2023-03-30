@@ -1,0 +1,14 @@
+.e-button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  background: var(--calliper-color-navy);
+  color: var(--calliper-color-white);
+}
+
+.e-button:hover,
+.e-button:active,
+.e-button:focus {
+  background: var(--calliper-color-navy-3);
+  cursor: pointer; 
+}
