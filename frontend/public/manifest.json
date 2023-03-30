@@ -6,7 +6,7 @@
       "src": "logo127.png",
       "type": "image/png",
       "sizes": "120x127"
-    },
+    }
   ],
   "start_url": ".",
   "display": "standalone",
