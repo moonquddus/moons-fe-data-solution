@@ -1,0 +1,35 @@
+/* It's common practice to normalise font-size so that 1px = 1rem */
+/* Not a big fan of this - rem and px are completely different measurements and each should have their own mindsets when developing */
+:root {
+  --calliper-font-family: 'Inter', 'Helvetica Neue', sans-serif;
+
+  --calliper-font-size-s: 1rem;
+  --calliper-font-size-m: 1.25rem;
+  --calliper-font-size-l: 1.5rem;
+
+  --calliper-line-height-s: 1.5rem;
+  --calliper-line-height-l: 2rem;
+}
+
+body, p, li, a {
+  font-size: var(--calliper-font-size-s);
+  line-height: var(--calliper-line-height-s);
+}
+
+h1 {
+  margin: 0;
+  font-size: var(--calliper-font-size-l);
+  font-weight: 700;
+  line-height: var(--calliper-line-height-l);
+}
+
+h2 {
+  margin: 0;
+  font-size: var(--calliper-font-size-m);
+  font-weight: 500;
+  line-height: var(--calliper-line-height-l);
+}
+
+a {
+  color: var(--calliper-color-navy);
+}

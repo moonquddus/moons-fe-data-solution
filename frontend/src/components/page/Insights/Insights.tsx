@@ -1,7 +1,9 @@
 function Insights() {
-    return (
+  return (
+    <div data-testid='InsightsPage'>
       <h1>Insights</h1>
-    )
-  }
-  
-  export default Insights
+    </div>
+  )
+}
+
+export default Insights

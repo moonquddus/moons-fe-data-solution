@@ -1,0 +1,29 @@
+.f-navbar-item {
+  display: inline-flex;
+  color: var(--calliper-color-white);
+  font-size: var(--calliper-font-size-m);
+  padding: 16px 24px;
+  width: 100%;
+  text-decoration: none;
+}
+
+.f-navbar-item--active,
+.f-navbar-item:hover {
+  background: var(--calliper-color-navy-2);
+}
+
+.f-navbar-item__icon {
+  height: var(--calliper-line-height-s);
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 1000px) {
+  .f-navbar-item {
+    padding: 16px 0;
+    justify-content: center;
+  }
+
+  .f-navbar-item__icon {
+    margin: 0;
+  }
+}

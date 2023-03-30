@@ -1,6 +1,11 @@
+import { Link } from "react-router-dom"
+
 function Home() {
     return (
-      <h1>Homepage</h1>
+      <div data-testid='HomePage'>
+        <h1>Homepage</h1>
+        <p>The main part of a dashboard probably goes here! Click on <Link to="/insights">Insights</Link> for the good stuff</p>
+      </div>
     )
   }
   
