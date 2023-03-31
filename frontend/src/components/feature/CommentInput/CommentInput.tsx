@@ -14,7 +14,7 @@ function CommentInput({activeThread}: CommentInputProps) {
 
   const submitHandler: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault()
-    if (!activeThread) return
+    if (!activeThread || !input) return
     setInput('')
     if (activeThread.id){
       setComment({
@@ -44,8 +44,8 @@ function CommentInput({activeThread}: CommentInputProps) {
    * It works fine with an enter key, but for full a11y there should be a submit button the user can click on
    */
   return (
-    <form action='' onSubmit={submitHandler} className={baseClass}>
-      <input className={`${baseClass}__input`} type='text' value={input} onChange={event => setInput(event.target.value)} placeholder='Add comment...' name='comment-input' aria-label='Add comment' autoComplete='none' />
+    <form action='' onSubmit={submitHandler} className={baseClass} data-testid='CommentForm'>
+      <input data-testid='CommentInput' className={`${baseClass}__input`} type='text' value={input} onChange={event => setInput(event.target.value)} placeholder='Add comment...' name='comment-input' aria-label='Add comment' autoComplete='none' />
     </form>
   )
 }

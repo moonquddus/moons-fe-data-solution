@@ -58,7 +58,7 @@ function InsightsChart(props: InsightsChartProps) {
 
   const baseClass = 'f-insights-chart'
   return (
-    <Bar ref={chartRef} className={baseClass} options={options} data={transformedData} onClick={clickHandler} updateMode='resize' />
+    <Bar ref={chartRef} className={baseClass} options={options} data={transformedData} onClick={clickHandler} updateMode='resize' data-testid='InsightsChart' />
   )
 }
 

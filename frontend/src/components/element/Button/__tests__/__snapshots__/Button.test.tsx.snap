@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering button should render children inside the button 1`] = `
+<body>
+  <div>
+    <button
+      class="e-button "
+    >
+      Hello I'm a button
+    </button>
+  </div>
+</body>
+`;

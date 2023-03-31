@@ -2,10 +2,11 @@ import { act, render, screen, waitFor } from "@testing-library/react"
 import { RouterProvider } from "react-router-dom"
 import { router } from "../../../../router"
 import userEvent from '@testing-library/user-event'
+import { renderWithProviders } from "../../../../lib/testing/utils"
 
 describe('navbar physical navigation', () => {
   it('should take you to a new page on click', async () => {
-    render(<RouterProvider router={router} />)
+    renderWithProviders(<RouterProvider router={router} />)
 
     await waitFor(async () => {
       expect(screen.queryByTestId('Navbar')).toBeInTheDocument()

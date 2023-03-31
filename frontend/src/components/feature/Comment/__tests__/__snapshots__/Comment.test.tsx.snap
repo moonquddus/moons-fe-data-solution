@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering comment should correctly render the comment, given the props 1`] = `
+<body>
+  <div>
+    <li
+      class="f-comment"
+      data-testid="CommentItem"
+    >
+      <div
+        class="f-comment__author"
+      >
+        Moon
+      </div>
+      <p
+        class="f-comment__text"
+      >
+        Yoooooo check out this comment
+      </p>
+    </li>
+  </div>
+</body>
+`;

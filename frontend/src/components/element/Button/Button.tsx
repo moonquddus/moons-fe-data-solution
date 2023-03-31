@@ -7,7 +7,7 @@ function Button(props: React.PropsWithChildren<React.ButtonHTMLAttributes<HTMLBu
   const {children, ...data} = props
   const baseClass = 'e-button'
   return (
-    <button {...data} className={`${baseClass} ${data.className}`}>
+    <button {...data} className={`${baseClass} ${data.className ?? ''}`}>
       {children}
     </button>
   )

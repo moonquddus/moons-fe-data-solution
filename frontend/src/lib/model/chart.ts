@@ -4,7 +4,7 @@
  * Being so tightly-coupled leaves us to the whims of BE, which imo isn't great for stability
  * In an ideal world, FE is just a consumer which could handle any BE service, and vice versa
  */
-export type ChartDataReponse = ChartData[]
+export type ChartDataResponse = ChartData[]
 
 export type ChartData = Record<ChartDataFeature, number> & {
   country: ChartCountry

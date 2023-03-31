@@ -23,7 +23,7 @@ function CommentsBox({activeThread}: CommentsBoxProps) {
   return (
     <section className={baseClass}>
       {!activeThread && (
-        <p>Click on a data point to view comments</p>
+        <p data-testid='CommentsBoxBlank'>Click on a data point to view comments</p>
       )}
       {activeThread && (
         <h2>Comments ({activeThread.chartDataPoint.country} - {activeThread.chartDataPoint.feature})</h2>
@@ -34,7 +34,10 @@ function CommentsBox({activeThread}: CommentsBoxProps) {
       {commentThread.isError && (
         <p>Error loading comments!</p>
       )}
-      <ul className={`${baseClass}__thread`}>
+      {activeThread && !activeThread.id && (
+        <p data-testid='CommentsBoxNewThread'>Add a comment and start a discussion!</p>
+      )}
+      <ul className={`${baseClass}__thread`} data-testid='CommentsBoxThread'>
         {hasComments && commentThread.data?.comments.map((comment, key) => (
           <Comment key={`comment-${key}`} comment={comment} />
         ))}

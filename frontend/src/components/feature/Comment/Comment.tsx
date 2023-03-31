@@ -11,7 +11,7 @@ interface CommentProps {
 function ChartComment({comment}: CommentProps) {
   const baseClass = 'f-comment'
   return (
-    <li className={baseClass}>
+    <li className={baseClass} data-testid='CommentItem'>
       <div className={`${baseClass}__author`}>{comment.userName}</div>
       <p className={`${baseClass}__text`}>{comment.text}</p>
     </li>

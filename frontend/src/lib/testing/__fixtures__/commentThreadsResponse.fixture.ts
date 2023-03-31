@@ -1,0 +1,1 @@
+export default [{"chartDataPoint":{"feature":"kebab","country":"DE"},"commentsCount":3,"id":"05ea2cb2717d414393fa30b36609c118"},{"chartDataPoint":{"feature":"burger","country":"GB"},"commentsCount":2,"id":"4a905c4edd684130b8b57886fdacf20a"}]

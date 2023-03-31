@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ChartDataReponse } from '../model/chart'
+import { ChartDataResponse } from '../model/chart'
 import { SERVER_URL } from './config'
 
 export const chartApi = createApi({
@@ -7,11 +7,11 @@ export const chartApi = createApi({
   reducerPath: 'chartApi',
   tagTypes: ['chart', 'shared-chart'],
   endpoints: (build) => ({
-    getChartData: build.query<ChartDataReponse, void>({
+    getChartData: build.query<ChartDataResponse, void>({
       query: () => `chart/data`,
       providesTags: ['chart'],
     }),
-    getChartFromToken: build.query<ChartDataReponse, string>({
+    getChartFromToken: build.query<ChartDataResponse, string>({
       query: (id: string) => `chart/shared/${id}`,
       providesTags: ['shared-chart'],
     }),
