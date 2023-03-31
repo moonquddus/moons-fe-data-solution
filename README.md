@@ -15,6 +15,7 @@ Hope you enjoy my solution! I've left the old readme in `INSTRUCTIONS.md` if you
 - I have a rough component structure in place, but for larger-scale apps I guess I would seperate by domain as well
 - I was relatively thorough with the tests. I put a lot of integration tests in place - one of my beliefs is that integration tests provide the greatest documentation on a component, not comments. In theory, it should explain the entire business logic of a component
 - That being said... there were so many places I could have done more. I missed out a lot of edge cases, and I could have arguably made more unit tests (deep object comparison instead of snapshots), as well as some cool functional tests in cypress if we wanted to. But again, I didn't want to go overkill on a tech test
+- Oh and please excuse the messy commits hahaha. I like to use conventional commits in a professional environment, works well with release bots generating a changelog
 
 ### Improvements
 
