@@ -1,7 +1,10 @@
+/* Maybe should have put this in assets instead... */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 @import './colors.css';
 @import './typography.css';
 @import './utilities.css';
+
+/* I like normalising everything to fix border-box model. Easier to digest spacing imo */
 
 * {
   box-sizing: border-box;

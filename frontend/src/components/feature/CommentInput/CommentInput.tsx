@@ -1,5 +1,4 @@
 import { FormEventHandler, useState } from 'react'
-import { act } from 'react-dom/test-utils'
 import { ActiveThreadPayload } from '../../../lib/model/comment'
 import { useCreateThreadMutation, useRespondToThreadMutation } from '../../../lib/service/coment.api'
 import './CommentInput.css'
@@ -40,6 +39,10 @@ function CommentInput({activeThread}: CommentInputProps) {
   }
 
   const baseClass = 'f-comment-input'
+  /**
+   * I was a bit cheeky here, not adding a physical send button
+   * It works fine with an enter key, but for full a11y there should be a submit button the user can click on
+   */
   return (
     <form action='' onSubmit={submitHandler} className={baseClass}>
       <input className={`${baseClass}__input`} type='text' value={input} onChange={event => setInput(event.target.value)} placeholder='Add comment...' name='comment-input' aria-label='Add comment' autoComplete='none' />

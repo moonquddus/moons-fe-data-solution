@@ -14,6 +14,8 @@ export const router = createBrowserRouter([
     element: <NavRoute><Insights /></NavRoute>,
   },
   {
+    // I wanted the chart page to replicate an experience for a public user
+    // So I did not include the navbar which assumes you are logged in
     path: '/view-chart/:id',
     element:<ViewChart />,
   }

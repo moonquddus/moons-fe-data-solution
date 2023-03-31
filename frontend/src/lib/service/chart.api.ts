@@ -1,11 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { ChartDataReponse } from '../model/chart'
-import { BASE_URL } from './config'
-
-// Reeeeeally should put this in a config somewhere hahaha
+import { SERVER_URL } from './config'
 
 export const chartApi = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
+  baseQuery: fetchBaseQuery({ baseUrl: SERVER_URL }),
   reducerPath: 'chartApi',
   tagTypes: ['chart', 'shared-chart'],
   endpoints: (build) => ({

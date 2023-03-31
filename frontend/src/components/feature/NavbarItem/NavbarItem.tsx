@@ -11,6 +11,7 @@ function NavbarItem(props: React.PropsWithChildren<NavbarItemProps>) {
   const { icon, to, children, ...data} = props
   const location = useLocation()
 
+  // Honestly this isn't exactly an expensive operation, useMemo is a bit overkill
   const isActive = useMemo(() => {
     return location.pathname === to
   }, [location, to])

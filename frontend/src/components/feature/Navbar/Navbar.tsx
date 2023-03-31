@@ -8,6 +8,11 @@ import HomeIcon from '../../../assets/icons/home.svg'
 import InsightsIcon from '../../../assets/icons/insights.svg'
 
 function Navbar(props: React.HTMLAttributes<HTMLElement>) {
+  /**
+   * This navbar makes a lot of assumptions
+   * ie. we're already logged in, and we're called John
+   * Probably a tooltip would have been useful when it collapses
+   */
   const baseClass = 'f-navbar'
   return (
     <nav className={baseClass} data-testid='Navbar' {...props}>

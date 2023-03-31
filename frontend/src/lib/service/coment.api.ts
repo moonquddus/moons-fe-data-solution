@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { ChartDataPoint } from '../model/chart'
 import { CommentThreadsDataResponse, FullCommentThread } from '../model/comment'
-import { BASE_URL } from './config'
+import { SERVER_URL } from './config'
 
 interface ApiComment {
   user_name: string
@@ -19,7 +19,7 @@ interface CreateThreadPayload {
 }
 
 export const commentApi = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
+  baseQuery: fetchBaseQuery({ baseUrl: SERVER_URL }),
   reducerPath: 'commentApi',
   tagTypes: ['comments', 'thread'],
   endpoints: (build) => ({

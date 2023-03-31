@@ -9,12 +9,15 @@ interface ChartJSTransformReducer {
 }
 
 export function transformDataToChartJSData(data: ChartData[], threads: CommentThread[]): ChartJSData<'bar'> {
-  // apologies, I hate overly complicated reducers but I went past the point of no return...
+  // Apologies, I hate overly complicated reducers but I went past the point of no return haha
   const transformedData: ChartJSTransformReducer = data.reduce(
     (accumulator, singleData) => {
     accumulator.labels.push(singleData.country)
     validChartDataFeatures.forEach((featureName, index) => {
       const thread = matchThread(threads, singleData.country, featureName)
+      // This is not the prettiest way to handle this...
+      // But I have used the second value to show comments
+      // The second value actually shifts the bar, hence I divided it by a large number
       accumulator.datasets[index].data.push([singleData[featureName], (thread?.commentsCount ?? 0) / 10000])
     })
     return accumulator
@@ -31,12 +34,12 @@ export function transformDataToChartJSData(data: ChartData[], threads: CommentTh
           anchor: 'end',
           color: 'black',
           formatter: (value) => {
-            return value[1] > 0 ? `${value[1] * 10000}🗨️` : ''
+            return value[1] > 0 ? `${Math.round(value[1] * 10000)}🗨️` : ''
           },
         },
       }
     })
-  } as ChartJSTransformReducer)
+  } as ChartJSTransformReducer) // the dreaded type-casting
 
   return transformedData
 }

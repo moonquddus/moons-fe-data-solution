@@ -3,6 +3,10 @@ import { chartApi } from '../service/chart.api'
 import { commentApi } from '../service/coment.api'
 import { shareApi } from '../service/share.api'
 
+/**
+ * I made a choice not to create a slice of any kind
+ * Stuck with the api middleware (RTK <3) and it does the job with not too much code
+ */
 const store = configureStore({
   reducer: {
     [chartApi.reducerPath]: chartApi.reducer,

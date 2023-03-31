@@ -24,6 +24,8 @@ function InsightsChart(props: InsightsChartProps) {
     onPointClick(transformElementToThread(getElementAtEvent(chart, event)[0], data, threads))
   }
 
+  // The quintissential use of useMemo
+  // An expensive transformer function that should return the same result, given the same data & threads
   const transformedData = useMemo(() => {
     return transformDataToChartJSData(data, threads)
   }, [data, threads])
@@ -43,6 +45,9 @@ function InsightsChart(props: InsightsChartProps) {
       tooltip: {
         callbacks: {
           label: function(this: TooltipModel<"bar">, tooltipItem: TooltipItem<"bar">) {
+            // FYI this was an absolute nightmare to configure
+            // Using a react wrapper for a charting library with multiple versions - conflicting documentation everywhere!
+            // Thank the lord for TypeScript telling me what the args are hahaha
             const value = Array.isArray(tooltipItem.raw) ? tooltipItem.raw[0] : 0
             return `${tooltipItem.dataset.label}: ${value}`
           }

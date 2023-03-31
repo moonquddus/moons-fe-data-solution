@@ -1,3 +1,6 @@
+/* These are just colours I thought would match callipers colour scheme */
+/* HSL is fantastic measurement for colours, much more human-readable than a hex code */
+
 :root {
   --calliper-color-grey: hsl(0 25% 93% / 1);
   --calliper-color-navy: hsl(213 47.62% 8.24% / 1);

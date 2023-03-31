@@ -34,6 +34,10 @@ function InsightsOverview() {
   }
 
   const clickHandler: React.MouseEventHandler<HTMLButtonElement> = (event) => {
+    /**
+     * I would have loved to make a share modal that generates the share link, and a "copy to clipboard" button as well!
+     * And some privacy settings, it's one of the last things I made at my previous role
+     */
     event.preventDefault()
     getShareLink()
   }
