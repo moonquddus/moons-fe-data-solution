@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`transformDataToChartJSData should transform api data to a Chart JS model 1`] = `
+Object {
+  "datasets": Array [
+    Object {
+      "backgroundColor": "hsl(0 80% 60%)",
+      "data": Array [
+        Array [
+          24,
+          0,
+        ],
+        Array [
+          24,
+          0,
+        ],
+      ],
+      "datalabels": Object {
+        "anchor": "end",
+        "color": "black",
+        "formatter": [Function],
+      },
+      "label": "hotdog",
+    },
+    Object {
+      "backgroundColor": "hsl(56 80% 60%)",
+      "data": Array [
+        Array [
+          2642,
+          0,
+        ],
+        Array [
+          2642,
+          0,
+        ],
+      ],
+      "datalabels": Object {
+        "anchor": "end",
+        "color": "black",
+        "formatter": [Function],
+      },
+      "label": "burger",
+    },
+    Object {
+      "backgroundColor": "hsl(112 80% 60%)",
+      "data": Array [
+        Array [
+          42,
+          0,
+        ],
+        Array [
+          42,
+          0,
+        ],
+      ],
+      "datalabels": Object {
+        "anchor": "end",
+        "color": "black",
+        "formatter": [Function],
+      },
+      "label": "sandwich",
+    },
+    Object {
+      "backgroundColor": "hsl(168 80% 60%)",
+      "data": Array [
+        Array [
+          23,
+          0.0035,
+        ],
+        Array [
+          23,
+          0,
+        ],
+      ],
+      "datalabels": Object {
+        "anchor": "end",
+        "color": "black",
+        "formatter": [Function],
+      },
+      "label": "kebab",
+    },
+    Object {
+      "backgroundColor": "hsl(224 80% 60%)",
+      "data": Array [
+        Array [
+          246,
+          0,
+        ],
+        Array [
+          246,
+          0,
+        ],
+      ],
+      "datalabels": Object {
+        "anchor": "end",
+        "color": "black",
+        "formatter": [Function],
+      },
+      "label": "fries",
+    },
+    Object {
+      "backgroundColor": "hsl(280 80% 60%)",
+      "data": Array [
+        Array [
+          1,
+          0,
+        ],
+        Array [
+          1,
+          0.0002,
+        ],
+      ],
+      "datalabels": Object {
+        "anchor": "end",
+        "color": "black",
+        "formatter": [Function],
+      },
+      "label": "donut",
+    },
+  ],
+  "labels": Array [
+    "GB",
+    "IT",
+  ],
+}
+`;
