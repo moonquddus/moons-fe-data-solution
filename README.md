@@ -29,6 +29,8 @@ Hope you enjoy my solution! I've left the old readme in `INSTRUCTIONS.md` if you
 - FE & BE models are very tightly coupled right now. A frontend application should theoretically be able to absorb and transform data from any generic BE service. In the future, I would have created a monolithic `Chart` model that included both the data points, and had an `comments` field as well. This model fits what FE is trying to achieve better. And probably would have kept it in a `chart-store` with redux
 - The act of commenting is at heart, a collaborative experience. I know RTK's api middleware has lots of handy features for frequently fetching new data (eg polling) and we can use websockets to keep a live connection if we wanted to.
 - The shared chart could have had its own navbar - but one that encourages the user to log in, or create their own account
+- I also noticed the projct came with Framer - I would have liked to use it, but I wanted to make sure everything works first
+  - At my previous role, I actually helped build a similar page of "Insights" graphs - we had performance scaling issues because all the user's graphs loaded in one go. We decided to show some animated skeleton graphs, and when you scroll into a graph it would finally render the actual data
 
 ### Let's chat!
 
